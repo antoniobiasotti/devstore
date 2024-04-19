@@ -17,8 +17,6 @@ export function Header() {
                 </form>
             </div>
 
-
-
             <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                     <ShoppingBag className="size-4" />
