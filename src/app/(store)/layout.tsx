@@ -1,4 +1,4 @@
-import { Header } from '@/components/header'
+import { Header } from '../../components/header'
 import { ReactNode } from 'react'
 
 export default function StoreLayout({ children } : { children: ReactNode }) {
