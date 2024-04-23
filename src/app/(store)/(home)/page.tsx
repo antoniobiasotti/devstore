@@ -1,7 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import { api } from "../../../data/api";
+
+async function getFeaturedProducts() {
+  const response = await api('/products/featured')
+
+  const products = await response.json()
+
+  return products
+}
 
 export default async function Home() {
+  const products = await getFeaturedProducts()
+
+  console.log(products)
+
   return (
     <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
       <Link 
@@ -9,7 +22,7 @@ export default async function Home() {
         className="group relative col-span-6 row-span-6 rounded-lg bg-zinc-900 flex justify-center items-center">
       
         <Image 
-          src="/moletom-never-stop-learning 1.png" 
+          src="/moletom-never-stop-learning.png" 
           className="group-hover:scale-105 transition-transform duration-500"
           width={920} 
           height={920} 
